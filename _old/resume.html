@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#ff2222" />
+<title>Resume | Kenil Bhalala</title>
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('kb:theme');
+      document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark');
+      var accent = localStorage.getItem('kb:accent');
+      if (accent && /^#[0-9a-fA-F]{3,8}$/.test(accent)) {
+        document.documentElement.style.setProperty('--accent', accent);
+      }
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@300..700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff2222'/><text x='50' y='76' font-size='70' fill='white' text-anchor='middle' font-family='monospace' font-weight='bold'>K</text></svg>" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="paper-grid" data-root="">
+<main class="page">
+
+  <header class="sub-head">
+    <span class="crumb"><span class="prompt">$</span> cat <span class="arg">resume.md</span></span>
+    <a class="back" href="index.html">← Back</a>
+  </header>
+
+  <div class="doc">
+    <span class="written" style="margin:0 0 1.5rem">Resume · 2026</span>
+    <h1 class="resume-name">Kenil<br/>Bhalala</h1>
+    <div class="resume-role">AI Product Engineer</div>
+
+    <div class="resume-grid">
+      <div class="kv">
+        <div><div class="k">Location</div>Surat, IN</div>
+        <div><div class="k">Phone</div>+91 ·</div>
+        <div><div class="k">Email</div>kenil@example.com</div>
+        <div><div class="k">LinkedIn</div>in/kenil-bhalala</div>
+        <div><div class="k">GitHub</div>kenilbhalala</div>
+        <div><div class="k">Portfolio</div>this site</div>
+      </div>
+      <div class="ctas" style="margin:0">
+        <a class="cta primary" href="#" onclick="window.print();return false"><span>Download PDF</span> <span class="ar">↓</span></a>
+        <a class="cta" href="#" onclick="window.print();return false"><span>Print</span> <span class="ar">⎙</span></a>
+      </div>
+    </div>
+
+    <header class="cmd-head">
+      <span class="cmd"><span class="prompt">$</span> cat <span class="arg">summary.md</span></span>
+      <span class="rule" aria-hidden="true"></span>
+      <span class="meta">ships full-stack AI</span>
+    </header>
+    <p style="font-family:var(--font-sans);font-size:.95rem;max-width:64ch;line-height:1.7">
+      AI Product Engineer who ships full-stack AI products and workflow automation tools.
+      Blends product strategy with hands-on engineering — from pipelines to product surfaces.
+    </p>
+    <div class="placeholder-note">PLACEHOLDER — replace this summary and the entries below with your real experience. The layout mirrors the original resume page: period on the left, company + role, then bullet points with measurable outcomes.</div>
+
+    <header class="cmd-head">
+      <span class="cmd"><span class="prompt">$</span> ls <span class="arg">experience/</span></span>
+      <span class="rule" aria-hidden="true"></span>
+      <span class="meta">most recent first</span>
+    </header>
+
+    <article class="resume-entry">
+      <div class="period">2025 — Present</div>
+      <h3>Your Current Company</h3>
+      <div class="role">AI Product Engineer</div>
+      <ul>
+        <li>Built real-time intelligence pipelines, replacing overnight reporting with hourly dashboards.</li>
+        <li>Automated a legacy manual workflow end-to-end, cutting turnaround dramatically.</li>
+        <li>Delivered analytics surfaces serving sub-second queries on live operational data.</li>
+      </ul>
+    </article>
+
+    <article class="resume-entry">
+      <div class="period">2024 — 2025</div>
+      <h3>Previous Company</h3>
+      <div class="role">Product Engineer</div>
+      <ul>
+        <li>Architected and launched a GenAI web app; grew it to its first real users.</li>
+        <li>Engineered prompt pipelines and rendering optimisations that cut latency.</li>
+        <li>Used instrumentation-driven iteration to push reliability and completion rates up.</li>
+      </ul>
+    </article>
+
+    <article class="resume-entry">
+      <div class="period">2023 — 2024</div>
+      <h3>Earlier Company</h3>
+      <div class="role">Product Analyst</div>
+      <ul>
+        <li>Built reporting on user flows; surfaced and fixed two scheduling bottlenecks.</li>
+        <li>Owned weekly metrics reviews and turned findings into shipped changes.</li>
+      </ul>
+    </article>
+  </div>
+
+</main>
+
+<aside class="dock" aria-label="Command dock">
+  <button type="button" class="open-btn js-open-term"><kbd>/</kbd> <b>open terminal</b> <span class="tip js-tip">try: cd work</span></button>
+  <span class="stamp js-stamp"></span>
+</aside>
+
+<div class="term" id="term" role="dialog" aria-label="Command terminal">
+  <div class="out"></div>
+  <div class="inrow">
+    <span class="ps1">kenil@earth:~$</span>
+    <input type="text" spellcheck="false" autocomplete="off" placeholder="type a command — try 'help'" aria-label="Terminal input" />
+    <span class="esc"><kbd>ESC</kbd> close</span>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
