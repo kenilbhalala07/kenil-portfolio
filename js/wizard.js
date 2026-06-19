@@ -11,7 +11,7 @@
     name: 'Kenil Bhalala',
     email: 'Kenilbhalala20@gmail.com',
     phone: '+919081683490',
-    github: 'https://github.com/kenilbhalala',
+    github: 'https://github.com/kenilbhalala07',
     linkedin: 'https://linkedin.com/in/kenilbhalala',
   };
 
