@@ -1,50 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-wiz="night">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Claude AI Case Study | Kenil Bhalala</title>
+<title>Claude — A Volume of Study | Kenil Bhalala</title>
 <script>
   (function () {
     try {
-      var t = localStorage.getItem('kb:theme');
-      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
-      var a = localStorage.getItem('kb:accent');
-      if (a) document.documentElement.style.setProperty('--accent', a);
+      var t = localStorage.getItem('kb:wiz-theme');
+      if (t === 'day') document.documentElement.setAttribute('data-wiz', 'day');
+      if (localStorage.getItem('kb:wiz-calm') === '1') document.documentElement.setAttribute('data-calm', '');
     } catch (e) {}
   })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..700&family=Geist:wght@400..800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../css/style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400..800;1,400..600&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%237b1e2b'/><text x='50' y='73' font-size='58' fill='%23c9a23f' text-anchor='middle' font-family='Georgia,serif' font-weight='bold'>K</text></svg>" />
+<link rel="stylesheet" href="../css/wizard.css" />
 </head>
-<body data-root="../">
-<div class="container">
+<body class="doc-page" data-root="../">
+<a class="skip-link" href="#top">Skip to content</a>
+<div class="embers" id="embers" aria-hidden="true"></div>
+<div class="starfield" id="starfield" aria-hidden="true">
+  <svg class="sky" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice">
+    <g class="constellation">
+      <polyline points="180,120 250,180 340,150 420,230 520,200"/>
+      <polyline points="700,360 760,300 840,330 880,260"/>
+      <polyline points="340,150 360,90"/>
+    </g>
+    <g class="cstars">
+      <circle cx="180" cy="120" r="2.2"/><circle cx="250" cy="180" r="1.8"/>
+      <circle cx="340" cy="150" r="2.6"/><circle cx="420" cy="230" r="1.8"/>
+      <circle cx="520" cy="200" r="2.2"/><circle cx="360" cy="90" r="1.6"/>
+      <circle cx="700" cy="360" r="2.2"/><circle cx="760" cy="300" r="1.8"/>
+      <circle cx="840" cy="330" r="1.8"/><circle cx="880" cy="260" r="2.4"/>
+    </g>
+    <g class="twinkle" id="twinkleField"></g>
+  </svg>
+</div>
 
-  <header class="page-head">
-    <span class="cmd"><span class="prompt">$</span>CD <b>/CASE-STUDIES/CLAUDE/</b></span>
-    <a class="back" href="../index.html#cases">← BACK</a>
-  </header>
+<nav class="sitenav" aria-label="Primary">
+  <div class="sitenav-inner">
+    <a class="nav-brand" href="../index.html" title="Back to the castle">← ✦ KB</a>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#s1">Summary</a></li>
+      <li><a href="#s2">Discovery</a></li>
+      <li><a href="#s3">Priorities</a></li>
+      <li><a href="#s4">Solution</a></li>
+      <li><a href="#s5">Design</a></li>
+      <li><a href="#s6">PRD</a></li>
+    </ul>
+    <div class="nav-ctrls">
+      <button class="nav-spell" id="openSpell" type="button">✦ Cast a spell</button>
+      <button class="nav-toggle" id="calmToggle" type="button" aria-pressed="false" title="Calm mode — quieter visuals">Calm</button>
+      <button class="lumos" id="spellToggle" type="button" title="Cast Lumos / Nox">
+        <span class="lumos-dot"></span><span id="spellToggleLabel">NOX</span>
+      </button>
+    </div>
+  </div>
+</nav>
 
+<div class="container" id="top">
   <div class="cs-layout">
     <main class="cs-main">
 
       <div class="cs-title">
-        <h1>Claude AI — product case study</h1>
-        <p class="cs-lede">A template case study on a conversational AI product:
-        discovery, prioritization, a proposed solution, and a PRD. Replace each
-        section below with your own research and write-up.</p>
-        <p class="cs-written"><span class="dot">●</span>WRITTEN MAR 2026</p>
+        <h1>Claude <span class="gold">/ AI</span></h1>
+        <p class="cs-lede">A volume of study on a conversational-AI product:
+        discovery, prioritization, a proposed solution, and a PRD. A template —
+        replace each section below with your own research and write-up.</p>
+        <p class="cs-written"><span class="star">●</span>SCRIBED MAR 2026</p>
       </div>
 
       <section class="cs-sec" id="s1">
-        <div class="cs-secdiv"><span><span class="prompt">$</span> READ <b>OVERVIEW</b></span><span class="line"></span><span class="n">01 / 06</span></div>
+        <div class="cs-secdiv"><span><span class="rune">❧</span> READ <b>OVERVIEW</b></span><span class="line"></span><span class="n">I / VI</span></div>
         <h2>Executive Summary</h2>
         <p class="body-p">One paragraph on what this case study covers: the
         product surface you studied, the work you led, and where it landed —
-        e.g. taking signals from user research through prioritization to a
-        shippable plan.</p>
+        from research signals through prioritization to a shippable plan.</p>
         <div class="cs-quote">A short framing block about the company and the
         product — who makes it, who uses it, and why it matters. Keep it to
         three or four sentences.</div>
@@ -55,7 +90,7 @@
       </section>
 
       <section class="cs-sec" id="s2">
-        <div class="cs-secdiv"><span><span class="prompt">$</span> READ <b>DISCOVERY</b></span><span class="line"></span><span class="n">02 / 06</span></div>
+        <div class="cs-secdiv"><span><span class="rune">❧</span> READ <b>DISCOVERY</b></span><span class="line"></span><span class="n">II / VI</span></div>
         <h2>Problem Discovery</h2>
         <p class="body-p">How you identified the product's most important pain
         points: community data analysis, user interviews, support threads.
@@ -67,18 +102,18 @@
       </section>
 
       <section class="cs-sec" id="s3">
-        <div class="cs-secdiv"><span><span class="prompt">$</span> READ <b>PRIORITIZATION</b></span><span class="line"></span><span class="n">03 / 06</span></div>
+        <div class="cs-secdiv"><span><span class="rune">❧</span> READ <b>PRIORITIZATION</b></span><span class="line"></span><span class="n">III / VI</span></div>
         <h2>Problem Prioritization</h2>
         <p class="body-p">Describe your weighted scoring model — the criteria,
         the weights, and the resulting ranking of candidate problems.</p>
         <div class="cs-cards">
-          <div class="cs-card"><h5>PROBLEM 1 · Highest priority</h5><p><em>How might we…</em> — your top problem statement, with impact and metrics.</p></div>
-          <div class="cs-card"><h5>PROBLEM 2 · High priority</h5><p><em>How might we…</em> — your second problem statement, with impact and metrics.</p></div>
+          <div class="cs-card"><h5>Problem 1 · Highest priority</h5><p><em>How might we…</em> — your top problem statement, with impact and metrics.</p></div>
+          <div class="cs-card"><h5>Problem 2 · High priority</h5><p><em>How might we…</em> — your second problem statement, with impact and metrics.</p></div>
         </div>
       </section>
 
       <section class="cs-sec" id="s4">
-        <div class="cs-secdiv"><span><span class="prompt">$</span> READ <b>SOLUTION</b></span><span class="line"></span><span class="n">04 / 06</span></div>
+        <div class="cs-secdiv"><span><span class="rune">❧</span> READ <b>SOLUTION</b></span><span class="line"></span><span class="n">IV / VI</span></div>
         <h2>Problem Solution</h2>
         <p class="body-p">The solution paths you brainstormed, how you compared
         them (feasibility, impact, time-to-market), and which direction you
@@ -90,7 +125,7 @@
       </section>
 
       <section class="cs-sec" id="s5">
-        <div class="cs-secdiv"><span><span class="prompt">$</span> READ <b>DESIGN-PROTOTYPES</b></span><span class="line"></span><span class="n">05 / 06</span></div>
+        <div class="cs-secdiv"><span><span class="rune">❧</span> READ <b>DESIGN</b></span><span class="line"></span><span class="n">V / VI</span></div>
         <h2>Design Implementation</h2>
         <p class="body-p">Walk the proposed flow stage by stage — entry point,
         request formulation, results presentation, integration. Add your
@@ -103,7 +138,7 @@
       </section>
 
       <section class="cs-sec" id="s6">
-        <div class="cs-secdiv"><span><span class="prompt">$</span> READ <b>PRD</b></span><span class="line"></span><span class="n">06 / 06</span></div>
+        <div class="cs-secdiv"><span><span class="rune">❧</span> READ <b>PRD</b></span><span class="line"></span><span class="n">VI / VI</span></div>
         <h2>Product Requirements Document</h2>
         <p class="body-p">The PRD that synthesizes the work above into a
         shippable specification: TL;DR, goals, user stories, functional
@@ -115,58 +150,85 @@
       </section>
 
       <div class="cs-footnav">
-        <span>NEXT CASE STUDY → <a href="bolt.html">BOLT / BUILD</a></span>
-        <a href="../index.html">← BACK TO PORTFOLIO</a>
+        <span>NEXT VOLUME → <a href="bolt.html">BOLT / BUILD</a></span>
+        <a href="../index.html">← BACK TO THE CASTLE</a>
       </div>
 
       <footer class="site-foot">
         <div class="foot-meta">
-          <div><div class="k">SET IN</div><div class="v">Geist Mono · 400/500/600/700</div></div>
-          <div><div class="k">BUILT BY HAND</div><div class="v">HTML · CSS · Vanilla JS</div></div>
-          <div><div class="k">LAST LOGIN</div><div class="v">this session</div></div>
-          <div><div class="k">LOCAL TIME</div><div class="v" id="footClock">—</div></div>
+          <div><div class="k">SET IN</div><div class="v">Cinzel · EB Garamond</div></div>
+          <div><div class="k">SCRIBED BY HAND</div><div class="v">HTML · CSS · Vanilla JS</div></div>
+          <div><div class="k">LAST VISIT</div><div class="v">this session</div></div>
+          <div><div class="k">CASTLE TIME</div><div class="v" id="footClock">—</div></div>
         </div>
         <div class="signature">
-          <div class="sig-logo">KB</div>
+          <div class="sig-logo">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="32" cy="32" r="25" fill="none" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 3"/>
+              <text x="32" y="41" font-size="26" text-anchor="middle" font-family="'Cinzel Decorative',serif" font-weight="900" fill="currentColor">KB</text>
+            </svg>
+          </div>
           <div>
             <div class="sig-name">Kenil Bhalala</div>
-            <div class="sig-meta">© 2026 · PORTFOLIO.V01 · BENGALURU, IN</div>
+            <div class="sig-meta">✦ 2026 · GRIMOIRE.V01 · BENGALURU, IN</div>
           </div>
-          <div class="eof">END OF FILE</div>
+          <div class="eof">— FINIS —</div>
         </div>
       </footer>
     </main>
-
-    <nav class="cs-nav">
-      <div class="h">$ LS SECTIONS/</div>
-      <a href="#s1" class="active"><span class="n">01</span>EXECUTIVE SUMMARY</a>
-      <a href="#s2"><span class="n">02</span>PROBLEM DISCOVERY</a>
-      <a href="#s3"><span class="n">03</span>PROBLEM PRIORITIZATION</a>
-      <a href="#s4"><span class="n">04</span>PROBLEM SOLUTION</a>
-      <a href="#s5"><span class="n">05</span>DESIGN IMPLEMENTATION</a>
-      <a href="#s6"><span class="n">06</span>PRODUCT REQUIREMENTS</a>
-    </nav>
   </div>
 </div>
 
-<div class="status-bar" id="statusBar" title="open terminal">
+<div class="status-bar" id="statusBar" role="button" tabindex="0" aria-label="Open the spell console" title="open the spell console">
   <div class="left">
-    <span class="slash">/</span>
-    <span class="ot">open terminal</span>
-    <span class="hint" id="termHint">try: open bolt</span>
+    <span class="slash">✦</span>
+    <span class="ot">open the spell console</span>
+    <span class="hint" id="termHint">try: accio bolt</span>
   </div>
   <div class="clock" id="barClock">—</div>
 </div>
 
-<div class="terminal" id="terminal">
-  <div class="term-out" id="termOut"></div>
+<div class="terminal" id="terminal" aria-label="Spell console">
+  <div class="term-out" id="termOut" role="log" aria-live="polite"></div>
+  <div class="term-chips" id="termChips" aria-label="Quick spells">
+    <button class="term-chip" type="button" data-spell="inventory">Inventory</button>
+    <button class="term-chip" type="button" data-spell="accio bolt">Next volume</button>
+    <button class="term-chip" type="button" data-spell="accio scroll">Résumé</button>
+    <button class="term-chip" type="button" data-spell="owl">Email</button>
+    <button class="term-chip" type="button" data-spell="theme">Lumos / Nox</button>
+    <button class="term-chip" type="button" data-spell="revelio">All spells</button>
+  </div>
   <div class="term-in">
-    <span class="ps1">kenil@earth:~$</span>
-    <input id="termInput" type="text" spellcheck="false" autocomplete="off" placeholder="type a command — try 'help'" />
+    <span class="ps1">kenil ✦ ~$</span>
+    <input id="termInput" type="text" spellcheck="false" autocomplete="off" placeholder="cast a spell — try 'inventory'" />
     <div class="esc"><span id="termEsc">ESC</span><span id="termClose">close</span></div>
   </div>
 </div>
 
-<script src="../js/main.js"></script>
+<div class="nudge" id="nudge" aria-live="polite">
+  <span class="nudge-x" id="nudgeX" role="button" tabindex="0" aria-label="Dismiss">×</span>
+  <b>✦ Psst —</b> open the <b>spell console</b> (the bar below, or press <b>/</b>) and try <b>accio bolt</b>.
+</div>
+
+<div class="owl-flight" id="owlFlight" aria-hidden="true">
+  <svg class="owl" viewBox="0 0 80 64" role="img">
+    <path class="ow-body" d="M40 40 L34 60 L46 60 Z"/>
+    <ellipse class="ow-body" cx="40" cy="34" rx="13" ry="17"/>
+    <path class="ow-belly" d="M40 24 q6 8 0 22 q-6-14 0-22Z"/>
+    <circle class="ow-body" cx="40" cy="16" r="12"/>
+    <path class="ow-body" d="M30 8 l2-8 4 6Z M50 8 l-2-8 -4 6Z"/>
+    <ellipse class="ow-face" cx="40" cy="17" rx="9" ry="8"/>
+    <circle class="ow-eye" cx="35.5" cy="16" r="3.4"/><circle class="ow-eye" cx="44.5" cy="16" r="3.4"/>
+    <circle class="ow-pupil" cx="35.5" cy="16" r="1.5"/><circle class="ow-pupil" cx="44.5" cy="16" r="1.5"/>
+    <path class="ow-beak" d="M40 19 l-2.6 4 5.2 0Z"/>
+    <path class="ow-feet" d="M36 50 v6 M44 50 v6"/>
+    <path class="ow-wing ow-wing-l" d="M28 30 C 10 22, 2 34, 6 44 C 16 40, 24 40, 30 42 Z"/>
+    <path class="ow-wing ow-wing-r" d="M52 30 C 70 22, 78 34, 74 44 C 64 40, 56 40, 50 42 Z"/>
+  </svg>
+</div>
+
+<script src="../js/wizard-fx.js"></script>
+<script src="../js/wizard.js"></script>
 </body>
 </html>

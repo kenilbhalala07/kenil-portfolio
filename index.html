@@ -1,259 +1,346 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-wiz="night">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Kenil Bhalala — Associate Product Manager</title>
-<meta name="description" content="Kenil Bhalala ships products end-to-end — assessment platforms, GTM campaigns, and funnels that convert." />
+<title>Kenil Bhalala — Grimoire of a Product Sorcerer</title>
+<meta name="description" content="Kenil Bhalala — Associate Product Manager. A wizarding-academia grimoire of products conjured from idea to in-hand." />
 <script>
   (function () {
     try {
-      var t = localStorage.getItem('kb:theme');
-      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
-      var a = localStorage.getItem('kb:accent');
-      if (a) document.documentElement.style.setProperty('--accent', a);
+      var t = localStorage.getItem('kb:wiz-theme');
+      if (t === 'day') document.documentElement.setAttribute('data-wiz', 'day');
+      if (localStorage.getItem('kb:wiz-calm') === '1') document.documentElement.setAttribute('data-calm', '');
     } catch (e) {}
   })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..700&family=Geist:wght@400..800&display=swap" rel="stylesheet" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231f47ff'/><text x='50' y='74' font-size='62' fill='white' text-anchor='middle' font-family='monospace' font-weight='bold'>K</text></svg>" />
-<link rel="stylesheet" href="css/style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400..800;1,400..600&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%237b1e2b'/><text x='50' y='73' font-size='58' fill='%23c9a23f' text-anchor='middle' font-family='Georgia,serif' font-weight='bold'>K</text></svg>" />
+<link rel="stylesheet" href="css/wizard.css" />
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to content</a>
+<div class="embers" id="embers" aria-hidden="true"></div>
+<div class="starfield" id="starfield" aria-hidden="true">
+  <svg class="sky" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice">
+    <g class="constellation">
+      <polyline points="180,120 250,180 340,150 420,230 520,200"/>
+      <polyline points="700,360 760,300 840,330 880,260"/>
+      <polyline points="340,150 360,90"/>
+    </g>
+    <g class="cstars">
+      <circle cx="180" cy="120" r="2.2"/><circle cx="250" cy="180" r="1.8"/>
+      <circle cx="340" cy="150" r="2.6"/><circle cx="420" cy="230" r="1.8"/>
+      <circle cx="520" cy="200" r="2.2"/><circle cx="360" cy="90" r="1.6"/>
+      <circle cx="700" cy="360" r="2.2"/><circle cx="760" cy="300" r="1.8"/>
+      <circle cx="840" cy="330" r="1.8"/><circle cx="880" cy="260" r="2.4"/>
+    </g>
+    <g class="twinkle" id="twinkleField"></g>
+  </svg>
+</div>
+
+<nav class="sitenav" aria-label="Primary">
+  <div class="sitenav-inner">
+    <a class="nav-brand" href="#top">✦ KB</a>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#chronicle">Experience</a></li>
+      <li><a href="#tomes">Case Studies</a></li>
+      <li><a href="#workshop">Lab</a></li>
+      <li><a href="#wizard">About</a></li>
+      <li><a href="#spellbook">Skills</a></li>
+      <li><a href="#owlpost">Contact</a></li>
+    </ul>
+    <div class="nav-ctrls">
+      <button class="nav-spell" id="openSpell" type="button">✦ Cast a spell</button>
+      <button class="nav-toggle" id="calmToggle" type="button" aria-pressed="false" title="Calm mode — quieter visuals">Calm</button>
+      <button class="lumos" id="spellToggle" type="button" title="Cast Lumos / Nox">
+        <span class="lumos-dot"></span><span id="spellToggleLabel">NOX</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
 <div class="container" id="top">
 
   <!-- ============ TOP BAR ============ -->
   <header class="topbar">
-    <div class="left"><span class="dot">●</span> OPEN TO TALK · BENGALURU · IN · FIG·02 FLAPPY</div>
-    <div class="right">INDEX <b>0001</b> / <a href="#top">PORTFOLIO.V01</a></div>
+    <div class="left"><span class="star">✦</span> OPEN TO TALK · BENGALURU · GMT+5:30 · CHAMBER·II SNITCH</div>
+    <div class="right">
+      <span class="grimoire">GRIMOIRE <b>I</b> / <a href="#top">PORTFOLIO.V01</a></span>
+    </div>
   </header>
 
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero-main">
-      <p class="presenting"><span class="num">001</span> → PRESENTING <b>KENIL BHALALA</b></p>
+      <p class="presenting"><span class="num">✦ I</span> · NOW PRESENTING — <b>KENIL BHALALA</b></p>
       <h1 class="big-name" id="bigName" data-text="Kenil Bhalala">Kenil Bhalala</h1>
-      <p class="role-line"><b>Associate Product Manager</b> <span class="slash">//</span> building products people use, end-to-end</p>
+      <p class="role-line"><b>Associate Product Manager</b> <span class="amp">·</span> conjuring products from idea to in-hand</p>
 
       <p class="intro">
-        I design and ship <b>products</b> from messy idea to in-hand.
-        Currently scaling <a href="#experience">assessment infrastructure</a> at
-        <b>Newton School</b> — an exam portal that went from 500 to 10,000+
-        concurrent users in under two months. Past work: a ₹7 Cr GTM
-        campaign, checkout funnels, and SKU systems at Unacademy.
+        I design and ship <b>products</b> from the first murky idea to the
+        thing in someone's hands. Currently enchanting
+        <a href="#chronicle">assessment infrastructure</a> at <b>Newton School</b>
+        — a portal that grew from 500 to <b>10,000+</b> concurrent souls in
+        under two moons. Past spells: a <b>₹7 Cr</b> launch campaign, checkout
+        funnels, and SKU systems woven at Unacademy.
       </p>
 
       <div class="chips">
-        <span class="chip"><span class="dot">◦</span>MASTER'S UNION '26</span>
-        <span class="chip"><span class="dot">●</span>OPEN TO PRODUCT ROLES</span>
-        <span class="chip"><span class="dot">●</span>BENGALURU · GMT+5:30</span>
+        <span class="chip"><span class="star">✦</span>MASTER'S UNION '26</span>
+        <span class="chip"><span class="star">●</span>OPEN TO PRODUCT ROLES</span>
+        <span class="chip"><span class="star">●</span>BENGALURU · GMT+5:30</span>
       </div>
 
       <div class="cta-row">
-        <a class="btn primary" href="#cases">READ CASE STUDIES →</a>
-        <a class="btn" href="#contact">GET IN TOUCH →</a>
-        <a class="btn" href="resume.html">RESUME ↗</a>
+        <a class="btn primary" href="#tomes">READ THE TOMES <span class="seal">✦</span></a>
+        <a class="btn" href="#owlpost">SEND AN OWL ✉</a>
+        <a class="btn" href="resume.html">GRIMOIRE ↗</a>
         <a class="btn" href="https://github.com/kenilbhalala" target="_blank" rel="noopener">⟳ SOURCE ↗</a>
       </div>
     </div>
 
     <aside class="hero-side">
-      <!-- flappy game -->
+      <div class="candle" aria-hidden="true">
+        <svg class="candle-svg" viewBox="0 0 60 120" role="img">
+          <ellipse class="cd-glow" cx="30" cy="34" rx="22" ry="30"/>
+          <g class="cd-flame">
+            <path class="cd-flame-outer" d="M30 16 C 38 30, 40 42, 30 52 C 20 42, 22 30, 30 16 Z"/>
+            <path class="cd-flame-inner" d="M30 30 C 34 38, 34 45, 30 50 C 26 45, 26 38, 30 30 Z"/>
+          </g>
+          <rect class="cd-wick" x="29" y="50" width="2" height="7" rx="1"/>
+          <path class="cd-body" d="M18 58 C 18 56, 22 55, 24 56 C 26 54, 30 55, 30 57 C 31 55, 35 55, 37 57 C 40 56, 42 57, 42 60 L 42 108 C 42 112, 38 114, 30 114 C 22 114, 18 112, 18 108 Z"/>
+          <path class="cd-sheen" d="M22 64 C 22 80, 22 96, 22 106"/>
+          <ellipse class="cd-rim" cx="30" cy="59" rx="12" ry="3.2"/>
+        </svg>
+      </div>
+      <!-- catch-the-snitch game -->
       <div class="panel" id="gamePanel">
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
         <div class="game-head">
-          <span>FIG · 02 / FLAPPY</span>
+          <span>CHAMBER · II / SNITCH</span>
           <span class="mode" id="gameMode">AUTO</span>
         </div>
         <div class="game-score">
-          <span>SCORE <b id="gameScore">00</b></span>
+          <span>CAUGHT <b id="gameScore">00</b></span>
           <span>BEST <b id="gameBest">00</b></span>
         </div>
         <div class="game-stage" id="gameStage">
           <canvas id="gameCanvas"></canvas>
-          <div class="game-overlay" id="gameOverlay"><span id="gameOverlayText">GAME OVER · TAP / SPACE TO RETRY</span></div>
+          <div class="game-overlay" id="gameOverlay"><span id="gameOverlayText">CAUGHT BY THE WALL · TAP / SPACE TO FLY</span></div>
         </div>
-        <div class="game-caption" id="gameCaption">AI · TAP TO TAKE OVER</div>
+        <div class="game-caption" id="gameCaption">SEEKER: AI · TAP TO TAKE THE BROOM</div>
       </div>
 
-      <!-- stats -->
+      <!-- enchanted ledger -->
       <div class="stat-table">
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
         <div class="stat-row"><span class="k">NOW</span><span class="v">Newton School · APM</span></div>
         <div class="stat-row"><span class="k">SHIPPING</span><span class="v">assessments + admissions</span></div>
         <div class="stat-row"><span class="k">YEARS</span><span class="v">3 in product</span></div>
-        <div class="stat-row"><span class="k">STACK</span><span class="v">SQL · Chai · Vibes</span></div>
-        <div class="stat-row"><span class="k">STATUS</span><span class="v"><span class="dot">●</span>open to talk</span></div>
+        <div class="stat-row"><span class="k">SCHOOL</span><span class="v">Master's Union '26</span></div>
+        <div class="stat-row"><span class="k">STATUS</span><span class="v"><span class="star">●</span>open to talk</span></div>
       </div>
     </aside>
   </section>
 
-  <!-- ============ WORK HISTORY ============ -->
-  <section class="block" id="experience">
+  <!-- ============ CHRONICLE OF DEEDS (work history) ============ -->
+  <section class="block" id="chronicle">
     <div class="sec-head">
-      <span class="cmd"><span class="prompt">$</span>LS <b>WORK-HISTORY/</b></span>
-      <span>4 ENTRIES · MOST RECENT FIRST</span>
+      <span class="cmd"><span class="rune">❧</span>THE CHRONICLE OF DEEDS</span>
+      <span class="sub">4 ENTRIES · MOST RECENT FIRST</span>
     </div>
     <table class="work-table">
       <colgroup>
         <col class="c-period" /><col class="c-company" /><col class="c-role" /><col />
       </colgroup>
       <thead>
-        <tr><th>PERIOD</th><th>COMPANY</th><th>ROLE</th><th>NOTE</th></tr>
+        <tr><th>ERA</th><th>HOUSE</th><th>TITLE</th><th>DEED</th></tr>
       </thead>
       <tbody>
         <tr class="active">
-          <td class="period"><span class="dot">●</span>2024-12 → Present</td>
+          <td class="period"><span class="star">●</span>2024-12 → Present</td>
           <td class="company">Newton School</td>
           <td>Associate Product Manager</td>
-          <td>Scaled the exam portal from 500 to 10,000+ concurrent users; owned 'Coding NSAT' from concept to GTM launch.</td>
+          <td>Grew the exam portal from 500 to 10,000+ concurrent users; conjured 'Coding NSAT' from concept to launch.</td>
         </tr>
         <tr>
           <td class="period">2023-08 → 2024-11</td>
           <td class="company">Unacademy</td>
           <td>Associate Product Manager</td>
-          <td>Led GTM for UNSAT — 3.5L+ leads and ₹7 Cr revenue; cut checkout drop-off by 22%.</td>
+          <td>Led the UNSAT launch — 3.5L+ leads and ₹7 Cr revenue; cut checkout drop-off by 22%.</td>
         </tr>
         <tr>
           <td class="period">2023-05 → 2023-08</td>
           <td class="company">Unacademy</td>
           <td>Product Management Intern</td>
-          <td>SKU creation protocol cut listing errors by 85%; integrated fintech loan options into the product flow.</td>
+          <td>SKU creation protocol cut listing errors by 85%; wove fintech loan options into the product flow.</td>
         </tr>
         <tr>
           <td class="period">2017 → 2020</td>
           <td class="company">Charusat University</td>
-          <td>BCA Student</td>
+          <td>Apprentice · BCA</td>
           <td>Bachelor's in Computer Applications — top 10% of the batch, CGPA 8.5/10.</td>
         </tr>
       </tbody>
     </table>
   </section>
 
-  <!-- ============ CASE STUDIES ============ -->
-  <section class="block" id="cases">
+  <!-- ============ TOMES & STUDIES (case studies) ============ -->
+  <section class="block" id="tomes">
     <div class="sec-head">
-      <span class="cmd"><span class="prompt">$</span>OPEN <b>CASE-STUDIES/</b></span>
-      <span>02 STUDIES</span>
+      <span class="cmd"><span class="rune">❧</span>TOMES &amp; STUDIES</span>
+      <span class="sub">02 VOLUMES</span>
     </div>
     <div class="case-list">
       <a class="case-card" href="case-studies/claude.html">
+        <div class="corner tl"></div><div class="corner br"></div>
         <div class="case-meta">
-          <div class="cs">CS</div>
-          <div class="num">01</div>
+          <div class="cs">VOL</div>
+          <div class="num">I</div>
           <div><span class="feat">FEATURED</span></div>
           <div class="co">ANTHROPIC</div>
-          <div class="when">WRITTEN MAR 2026</div>
+          <div class="when">SCRIBED MAR 2026</div>
         </div>
         <div class="case-body">
-          <h3>Claude <span class="blue">/AI</span></h3>
+          <h3>Claude <span class="gold">/AI</span></h3>
           <p>A product case study on Anthropic's conversational AI — surfacing UX gaps, opportunities, and a direction for agent-native workflows.</p>
-          <div class="case-tags">// PRODUCT CASE STUDY &nbsp;// AGENT UX &nbsp;// CONVERSATIONAL</div>
+          <div class="case-tags">❧ PRODUCT CASE STUDY &nbsp;❧ AGENT UX &nbsp;❧ CONVERSATIONAL</div>
         </div>
-        <div class="case-read">READ →</div>
+        <div class="case-read">OPEN →</div>
       </a>
       <a class="case-card" href="case-studies/bolt.html">
+        <div class="corner tl"></div><div class="corner br"></div>
         <div class="case-meta">
-          <div class="cs">CS</div>
-          <div class="num">02</div>
+          <div class="cs">VOL</div>
+          <div class="num">II</div>
           <div><span class="yr">2026</span></div>
           <div class="co">STACKBLITZ</div>
-          <div class="when">WRITTEN MAR 2026</div>
+          <div class="when">SCRIBED MAR 2026</div>
         </div>
         <div class="case-body">
-          <h3>Bolt <span class="blue">/Build</span></h3>
+          <h3>Bolt <span class="gold">/Build</span></h3>
           <p>A deep-dive on Bolt's in-browser AI builder — evaluating the prompt-to-product loop, onboarding, and where it can go next.</p>
-          <div class="case-tags">// PRODUCT CASE STUDY &nbsp;// DEVELOPER TOOLS &nbsp;// AI BUILDERS</div>
+          <div class="case-tags">❧ PRODUCT CASE STUDY &nbsp;❧ DEVELOPER TOOLS &nbsp;❧ AI BUILDERS</div>
         </div>
-        <div class="case-read">READ →</div>
+        <div class="case-read">OPEN →</div>
       </a>
     </div>
   </section>
 
-  <!-- ============ THE LAB ============ -->
-  <section class="block" id="lab">
+  <!-- ============ THE WORKSHOP (lab) ============ -->
+  <section class="block" id="workshop">
     <div class="sec-head">
-      <span class="cmd"><span class="prompt">$</span>CD <b>THE-LAB/</b></span>
-      <span>02 IN FLIGHT</span>
+      <span class="cmd"><span class="rune">❧</span>THE WORKSHOP</span>
+      <span class="sub sub-cauldron">
+        <svg class="cauldron" viewBox="0 0 48 44" aria-hidden="true">
+          <g class="cd-bubbles">
+            <circle class="bub b1" cx="20" cy="20" r="2"/>
+            <circle class="bub b2" cx="26" cy="20" r="1.4"/>
+            <circle class="bub b3" cx="23" cy="20" r="2.6"/>
+          </g>
+          <ellipse class="cd-brew" cx="24" cy="20" rx="13" ry="3.4"/>
+          <path class="cd-pot" d="M9 20 a15 15 0 0 0 30 0 l-2 0 a13 13 0 0 1 -26 0 Z"/>
+          <path class="cd-pot-fill" d="M11 20 a13 13 0 0 0 26 0 Z"/>
+          <rect class="cd-rim2" x="7" y="17.5" width="34" height="4" rx="2"/>
+          <path class="cd-legs" d="M16 40 l-2 3 M32 40 l2 3 M24 41 v3"/>
+          <path class="cd-handle" d="M9 22 q-4 2 -3 7 M39 22 q4 2 3 7"/>
+        </svg>
+        02 BREWING
+      </span>
     </div>
     <div class="lab-grid">
       <div class="lab-card">
-        <div class="lab-top"><span class="id">LAB·01</span><span class="status">■ IN DEVELOPMENT</span><span class="yr">2026</span></div>
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
+        <div class="lab-top"><span class="id">BREW·I</span><span class="status">◆ IN THE CAULDRON</span><span class="yr">2026</span></div>
         <div class="lab-cat">LOCAL AI · OPEN SOURCE</div>
-        <h3>~ Drift <span class="blue">/Notes</span></h3>
+        <h3>~ Drift <span class="gold">/Notes</span></h3>
         <p class="lab-lede">A local-first AI notebook — your thinking never leaves the device.</p>
-        <p class="lab-desc">An on-device capture-and-recall tool with bring-your-own models. No clouds, no keys, no compromises — runs entirely on your machine.</p>
+        <p class="lab-desc">An on-device capture-and-recall charm with bring-your-own models. No clouds, no keys, no compromises — runs entirely on your own machine.</p>
         <div class="lab-chips"><span>ON-DEVICE LLM</span><span>LOCAL-FIRST</span><span>OPEN SOURCE</span></div>
         <div class="learning">
-          <span class="k"><span class="dot">●</span>CURRENTLY LEARNING:</span>
+          <span class="k"><span class="star">●</span>NOW STUDYING:</span>
           <span class="v">embeddings on the edge · small-model fine-tuning</span>
         </div>
-        <a class="lab-link" href="#contact"><span>FOLLOW THE BUILD</span><span>→</span></a>
+        <a class="lab-link" href="#owlpost"><span>FOLLOW THE BREW</span><span>→</span></a>
       </div>
       <div class="lab-card">
-        <div class="lab-top"><span class="id">LAB·02</span><span class="status">■ IN DEVELOPMENT</span><span class="yr">2026</span></div>
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
+        <div class="lab-top"><span class="id">BREW·II</span><span class="status">◆ IN THE CAULDRON</span><span class="yr">2026</span></div>
         <div class="lab-cat">AGENT INFRA · RESEARCH</div>
-        <h3>▦ Agent <span class="blue">/Loop</span></h3>
+        <h3>▦ Agent <span class="gold">/Loop</span></h3>
         <p class="lab-lede">The harness is the thing — not the model. Building one to find out why.</p>
         <p class="lab-desc">An exploratory agent harness — the runtime, scaffolding, and feedback loops around a model. Researching what makes harnesses outperform raw model upgrades.</p>
         <div class="lab-chips"><span>AGENT RUNTIME</span><span>TOOL ORCHESTRATION</span><span>R&amp;D</span></div>
         <div class="learning">
-          <span class="k"><span class="dot">●</span>CURRENTLY LEARNING:</span>
+          <span class="k"><span class="star">●</span>NOW STUDYING:</span>
           <span class="v">agent eval harnesses · tool routing · model-runtime decoupling</span>
         </div>
-        <a class="lab-link" href="#contact"><span>TALK SHOP</span><span>→</span></a>
+        <a class="lab-link" href="#owlpost"><span>TALK SHOP</span><span>→</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="block" id="about">
+  <!-- ============ THE WIZARD (about) ============ -->
+  <section class="block" id="wizard">
     <div class="sec-head">
-      <span class="cmd"><span class="prompt">$</span>CAT <b>ABOUT.MD</b></span>
-      <span>HELLO, NICE TO MEET YOU</span>
+      <span class="cmd"><span class="rune">❧</span>THE WIZARD HIMSELF</span>
+      <span class="sub">PLEASED TO MAKE YOUR ACQUAINTANCE</span>
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>My fascination with technology started early — taking things apart to see how they worked, then learning to put better ones back together. That spark turned into a <u>curiosity</u> that has guided me ever since. Along the way I found my real love: the <a href="#lab">transformative potential of AI</a>.</p>
-        <p>What captivates me isn't the tech itself, but how it can fundamentally improve people's lives. I build products that solve meaningful problems and integrate into daily life — not sleek interfaces or feature lists for their own sake.</p>
-        <div class="mini-head"><span class="dot">●</span>HOBBIES</div>
+        <p class="dropcap">My fascination with technology started early — taking things apart to see how they worked, then learning to put better ones back together. That spark turned into a <u>curiosity</u> that has guided me ever since. Along the way I found my real love: the <a href="#workshop">transformative potential of AI</a>.</p>
+        <p>What captivates me isn't the tech itself, but how it can fundamentally improve people's lives. I build products that solve meaningful problems and weave into daily life — not sleek interfaces or feature lists for their own sake.</p>
+        <div class="mini-head"><span class="star">●</span>PASTIMES</div>
         <p>Fitness enthusiast &amp; reader. The nostalgic one in the group — always pushing for a monthly reunion. Also a dangerous cook: I love sharing meals with the people I care about.</p>
-        <div class="mini-head"><span class="dot">●</span>EDUCATION</div>
+        <div class="mini-head"><span class="star">●</span>SCHOOLING</div>
         <p class="edu"><b>Charusat University</b> — Bachelor's in Computer Applications · top 10% of batch (CGPA 8.5/10)<br/>
         <b>Master's Union</b> — Strategic Business Management · Master's Camp '26, Gurgaon</p>
-        <div class="mini-head"><span class="dot">●</span>COURSES</div>
+        <div class="mini-head"><span class="star">●</span>ENCHANTMENTS LEARNED</div>
         <p class="edu"><b>Airtribe</b> — Product Management Launchpad · graduated top fellow, ranked 3/80<br/>
         <b>DataMites</b> — Data Science</p>
       </div>
       <div class="photo-card">
-        <div class="ptop"><span>ID · KB-001</span><span class="active">ACTIVE</span></div>
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
+        <div class="ptop"><span>CARD · KB-001</span><span class="active">ENCHANTED</span></div>
         <div class="pwrap"><img src="imgs/kenil.jpeg" alt="Kenil Bhalala" /></div>
         <div class="pbot"><b>KENIL B.</b><span>BENGALURU · IN</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ STACK ============ -->
-  <section class="block" id="stack">
+  <!-- ============ SPELLBOOK (stack) ============ -->
+  <section class="block" id="spellbook">
     <div class="sec-head">
-      <span class="cmd"><span class="prompt">$</span>CAT <b>STACK.TXT</b></span>
-      <span>THE TOOLS I REACH FOR</span>
+      <span class="cmd"><span class="rune">❧</span>THE SPELLBOOK</span>
+      <span class="sub">THE WANDS I REACH FOR</span>
     </div>
     <div class="stack-grid">
       <div class="stack-col">
-        <h4><span class="dot">●</span>AI STACK</h4>
+        <div class="corner tl"></div><div class="corner br"></div>
+        <h4><span class="star">●</span>AI SPELLS</h4>
         <div class="stack-items"><span>Claude Code</span><span>Cursor</span><span>Codex CLI</span><span>OpenCode</span></div>
         <p class="stack-note">frontier (whatever shipped this week)<br/>open-source (whatever's hot)</p>
       </div>
       <div class="stack-col">
-        <h4><span class="dot">●</span>BUILD STACK</h4>
+        <div class="corner tl"></div><div class="corner br"></div>
+        <h4><span class="star">●</span>BUILD CHARMS</h4>
         <div class="stack-items"><span>TypeScript</span><span>Python</span><span>Go</span><span>SvelteKit</span></div>
-        <p class="stack-note">bias: pick the right tool for the brief</p>
+        <p class="stack-note">bias: pick the right wand for the brief</p>
       </div>
       <div class="stack-col">
-        <h4><span class="dot">●</span>PRODUCT</h4>
+        <div class="corner tl"></div><div class="corner br"></div>
+        <h4><span class="star">●</span>PRODUCT RITES</h4>
         <div class="stack-items"><span>Notion</span><span>Linear</span><span>Obsidian</span><span>Figma</span></div>
-        <p class="stack-note">write it down, then build it</p>
+        <p class="stack-note">scribe it down, then build it</p>
       </div>
     </div>
   </section>
@@ -262,45 +349,49 @@
 <!-- ============ TICKER ============ -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="tickerTrack">
-    <span><span class="dot">※</span>CODING NSAT · SHIPPED CONCEPT → GTM</span>
-    <span>BUILDING AT · NEWTON SCHOOL</span>
-    <span>CURRENTLY · MASTER'S UNION '26</span>
+    <span><span class="star">✦</span>CODING NSAT · CONJURED CONCEPT → LAUNCH</span>
+    <span>ENCHANTING AT · NEWTON SCHOOL</span>
+    <span>STUDYING AT · MASTER'S UNION '26</span>
     <span>BENGALURU, IN · GMT+5:30</span>
     <span>OPEN TO PRODUCT ROLES</span>
-    <span><span class="dot">●</span>UNSAT GTM · 3.5L+ LEADS · ₹7 CR REVENUE</span>
+    <span><span class="star">●</span>UNSAT LAUNCH · 3.5L+ LEADS · ₹7 CR REVENUE</span>
   </div>
 </div>
 
 <div class="container">
-  <!-- ============ CONTACT ============ -->
-  <section class="block" id="contact">
+  <!-- ============ OWL POST (contact) ============ -->
+  <section class="block" id="owlpost">
     <div class="sec-head">
-      <span class="cmd"><span class="prompt">$</span>CONTACT <b>--OPEN-CHANNELS</b></span>
-      <span>04 CHANNELS</span>
+      <span class="cmd"><span class="rune">❧</span>THE OWL POST</span>
+      <span class="sub">04 CHANNELS · OWLS WELCOME</span>
     </div>
-    <h2 class="contact-headline">Let's build something <span class="blue">worth shipping.</span> Good products start with a good conversation.</h2>
+    <h2 class="contact-headline">Let's conjure something <span class="gold">worth shipping.</span> Every great product begins with a good conversation.</h2>
     <div class="channels">
       <a class="channel" href="https://github.com/kenilbhalala" target="_blank" rel="noopener">
+        <div class="corner tl"></div><div class="corner br"></div>
         <div class="icon"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></div>
         <div class="k">GITHUB</div>
         <div class="v">@kenilbhalala</div>
         <div class="go">READ THE CODE→</div>
       </a>
       <a class="channel" href="https://linkedin.com/in/kenilbhalala" target="_blank" rel="noopener">
+        <div class="corner tl"></div><div class="corner br"></div>
         <div class="icon"><svg viewBox="0 0 16 16"><path d="M0 1.15C0 .52.53 0 1.18 0h13.64C15.47 0 16 .52 16 1.15v13.7c0 .63-.53 1.15-1.18 1.15H1.18A1.17 1.17 0 0 1 0 14.85V1.15zm4.94 12.25V6.17H2.54v7.23h2.4zM3.74 5.18c.84 0 1.36-.55 1.36-1.24-.02-.71-.52-1.25-1.34-1.25S2.4 3.23 2.4 3.94c0 .69.52 1.24 1.32 1.24h.02zm4.98 8.22V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.22.66 1.22 1.63v3.88h2.4V9.25c0-2.22-1.18-3.25-2.76-3.25-1.27 0-1.84.7-2.16 1.19v.02h-.02l.02-.02V6.17h-2.4c.03.68 0 7.23 0 7.23h2.39z"/></svg></div>
         <div class="k">LINKEDIN</div>
         <div class="v">/in/kenilbhalala</div>
         <div class="go">CONNECT→</div>
       </a>
       <a class="channel" href="mailto:Kenilbhalala20@gmail.com?subject=Hello%20Kenil">
+        <div class="corner tl"></div><div class="corner br"></div>
         <div class="icon"><svg viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-.5a.5.5 0 0 0-.5.5v.74l6.5 3.9 6.5-3.9V4a.5.5 0 0 0-.5-.5H2zm12.5 2.57-4.9 2.94 4.9 2.96V6.07zm-.06 6.55-5.42-3.28L8 10.18l-1.02-.84-5.42 3.28a.5.5 0 0 0 .44.28h12a.5.5 0 0 0 .44-.28zM1.5 12.5l4.9-2.96-4.9-2.94v5.9z"/></svg></div>
-        <div class="k">EMAIL</div>
+        <div class="k">SEND AN OWL</div>
         <div class="v">Kenilbhalala20@gmail.com</div>
-        <div class="go">SEND MAIL→</div>
+        <div class="go">DISPATCH→</div>
       </a>
       <a class="channel" href="tel:+919081683490">
+        <div class="corner tl"></div><div class="corner br"></div>
         <div class="icon"><svg viewBox="0 0 16 16"><path d="M3.65 1.33a1 1 0 0 1 1.53.12l1.74 2.4a1 1 0 0 1-.06 1.25l-.96 1.07a.7.7 0 0 0-.1.76c.33.7.93 1.62 1.7 2.39.77.77 1.69 1.37 2.39 1.7a.7.7 0 0 0 .76-.1l1.07-.96a1 1 0 0 1 1.25-.06l2.4 1.74a1 1 0 0 1 .12 1.53l-1.07 1.07c-.5.5-1.25.74-1.95.5-1.74-.6-3.92-1.78-5.93-3.79-2.01-2.01-3.19-4.19-3.79-5.93-.24-.7 0-1.45.5-1.95l1.4-1.74z"/></svg></div>
-        <div class="k">PHONE</div>
+        <div class="k">FLOO CALL</div>
         <div class="v">+91 90816 83490</div>
         <div class="go">CALL→</div>
       </a>
@@ -309,43 +400,92 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-foot">
-    <div class="foot-meta" style="margin-top:96px">
-      <div><div class="k">SET IN</div><div class="v">Geist Mono · 400/500/600/700</div></div>
-      <div><div class="k">BUILT BY HAND</div><div class="v">HTML · CSS · Vanilla JS</div></div>
-      <div><div class="k">LAST LOGIN</div><div class="v">this session</div></div>
-      <div><div class="k">LOCAL TIME</div><div class="v" id="footClock">—</div></div>
+    <div class="foot-meta">
+      <div><div class="k">SET IN</div><div class="v">Cinzel · EB Garamond</div></div>
+      <div><div class="k">SCRIBED BY HAND</div><div class="v">HTML · CSS · Vanilla JS</div></div>
+      <div><div class="k">LAST VISIT</div><div class="v">this session</div></div>
+      <div><div class="k">CASTLE TIME</div><div class="v" id="footClock">—</div></div>
     </div>
     <div class="signature">
-      <div class="sig-logo">KB</div>
+      <div class="sig-logo">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="32" cy="32" r="25" fill="none" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 3"/>
+          <text x="32" y="41" font-size="26" text-anchor="middle" font-family="'Cinzel Decorative',serif" font-weight="900" fill="currentColor">KB</text>
+        </svg>
+      </div>
       <div>
         <div class="sig-name">Kenil Bhalala</div>
-        <div class="sig-meta">© 2026 · PORTFOLIO.V01 · BENGALURU, IN</div>
+        <div class="sig-meta">✦ 2026 · GRIMOIRE.V01 · BENGALURU, IN</div>
       </div>
-      <div class="eof">END OF FILE</div>
+      <div class="wax-seal" aria-hidden="true">
+        <svg viewBox="0 0 80 80" role="img">
+          <path class="ws-wax" d="M40 6 c10 -2 16 4 20 10 c5 3 12 4 12 14 c2 9 -4 14 -8 20 c-2 8 -10 10 -18 11 c-7 3 -15 0 -21 -5 c-8 -2 -12 -9 -12 -17 c-4 -7 -2 -16 4 -21 c4 -7 12 -10 23 -12 Z"/>
+          <circle class="ws-ring" cx="40" cy="41" r="25"/>
+          <circle class="ws-ring ws-ring-2" cx="40" cy="41" r="29"/>
+          <g class="ws-stars">
+            <path d="M40 13 l1.6 3.2 -1.6-1 -1.6 1Z"/><path d="M67 41 l-3.2 1.6 1-1.6 -1-1.6Z"/>
+            <path d="M40 69 l-1.6-3.2 1.6 1 1.6-1Z"/><path d="M13 41 l3.2-1.6 -1 1.6 1 1.6Z"/>
+          </g>
+          <text class="ws-mono" x="40" y="50" text-anchor="middle">KB</text>
+        </svg>
+      </div>
+      <div class="eof">— FINIS —</div>
     </div>
   </footer>
 </div>
 
 <!-- ============ FIXED STATUS BAR ============ -->
-<div class="status-bar" id="statusBar" title="open terminal">
+<div class="status-bar" id="statusBar" role="button" tabindex="0" aria-label="Open the spell console" title="open the spell console">
   <div class="left">
-    <span class="slash">/</span>
-    <span class="ot">open terminal</span>
-    <span class="hint" id="termHint">try: cat resume.md</span>
+    <span class="slash">✦</span>
+    <span class="ot">open the spell console</span>
+    <span class="hint" id="termHint">try: revelio</span>
   </div>
   <div class="clock" id="barClock">—</div>
 </div>
 
-<!-- ============ TERMINAL ============ -->
-<div class="terminal" id="terminal">
-  <div class="term-out" id="termOut"></div>
+<!-- ============ SPELL CONSOLE ============ -->
+<div class="terminal" id="terminal" aria-label="Spell console">
+  <div class="term-out" id="termOut" role="log" aria-live="polite"></div>
+  <div class="term-chips" id="termChips" aria-label="Quick spells">
+    <button class="term-chip" type="button" data-spell="inventory">Inventory</button>
+    <button class="term-chip" type="button" data-spell="accio scroll">Résumé</button>
+    <button class="term-chip" type="button" data-spell="accio coffer">Highlights</button>
+    <button class="term-chip" type="button" data-spell="owl">Email</button>
+    <button class="term-chip" type="button" data-spell="theme">Lumos / Nox</button>
+    <button class="term-chip" type="button" data-spell="revelio">All spells</button>
+  </div>
   <div class="term-in">
-    <span class="ps1">kenil@earth:~$</span>
-    <input id="termInput" type="text" spellcheck="false" autocomplete="off" placeholder="type a command — try 'help'" />
+    <span class="ps1">kenil ✦ ~$</span>
+    <input id="termInput" type="text" spellcheck="false" autocomplete="off" placeholder="cast a spell — try 'inventory'" />
     <div class="esc"><span id="termEsc">ESC</span><span id="termClose">close</span></div>
   </div>
 </div>
 
-<script src="js/main.js"></script>
+<div class="nudge" id="nudge" aria-live="polite">
+  <span class="nudge-x" id="nudgeX" role="button" tabindex="0" aria-label="Dismiss">×</span>
+  <b>✦ Psst —</b> this site is interactive. Open the <b>spell console</b> (the bar below, or press <b>/</b>) and try casting <b>inventory</b>.
+</div>
+
+<div class="owl-flight" id="owlFlight" aria-hidden="true">
+  <svg class="owl" viewBox="0 0 80 64" role="img">
+    <path class="ow-body" d="M40 40 L34 60 L46 60 Z"/>
+    <ellipse class="ow-body" cx="40" cy="34" rx="13" ry="17"/>
+    <path class="ow-belly" d="M40 24 q6 8 0 22 q-6-14 0-22Z"/>
+    <circle class="ow-body" cx="40" cy="16" r="12"/>
+    <path class="ow-body" d="M30 8 l2-8 4 6Z M50 8 l-2-8 -4 6Z"/>
+    <ellipse class="ow-face" cx="40" cy="17" rx="9" ry="8"/>
+    <circle class="ow-eye" cx="35.5" cy="16" r="3.4"/><circle class="ow-eye" cx="44.5" cy="16" r="3.4"/>
+    <circle class="ow-pupil" cx="35.5" cy="16" r="1.5"/><circle class="ow-pupil" cx="44.5" cy="16" r="1.5"/>
+    <path class="ow-beak" d="M40 19 l-2.6 4 5.2 0Z"/>
+    <path class="ow-feet" d="M36 50 v6 M44 50 v6"/>
+    <path class="ow-wing ow-wing-l" d="M28 30 C 10 22, 2 34, 6 44 C 16 40, 24 40, 30 42 Z"/>
+    <path class="ow-wing ow-wing-r" d="M52 30 C 70 22, 78 34, 74 44 C 64 40, 56 40, 50 42 Z"/>
+  </svg>
+</div>
+
+<script src="js/wizard-fx.js"></script>
+<script src="js/wizard.js"></script>
 </body>
 </html>
