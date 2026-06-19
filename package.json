@@ -1,0 +1,20 @@
+{
+  "name": "kenil-portfolio",
+  "version": "1.0.0",
+  "description": "A hand-built, zero-dependency personal portfolio for Kenil Bhalala, Associate Product Manager",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build required'",
+    "lint": "echo 'No linter configured - static HTML/CSS/JS project'"
+  },
+  "keywords": [
+    "portfolio",
+    "static-site"
+  ],
+  "author": "Kenil Bhalala",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "type": "module"
+}
