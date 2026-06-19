@@ -18,6 +18,13 @@
   var $ = function (s) { return document.querySelector(s); };
   var ROOT = (document.body && document.body.getAttribute('data-root')) || '';
 
+  /* ---------------- analytics (provider-agnostic) ----------------
+     fires to Vercel Web Analytics (window.va) and GA4 (window.gtag) if present */
+  function track(name, props) {
+    try { if (window.va) window.va('event', { name: name, data: props || {} }); } catch (e) {}
+    try { if (window.gtag) window.gtag('event', name, props || {}); } catch (e) {}
+  }
+
   /* ---------------- clocks ---------------- */
   function fmtClock() {
     var d = new Date();
@@ -188,6 +195,7 @@
         overlayText.textContent = 'CAUGHT BY THE WALL · TAP / SPACE TO FLY';
         overlay.classList.add('show');
         overSince = performance.now();
+        track('game_over', { score: score, best: best });
       } else if (mode === 'AUTO') {
         setMode('RESET');
         overlayText.textContent = 'SEEKER STUMBLED · REMOUNTING';
@@ -197,7 +205,7 @@
     }
 
     function takeOverOrFlap() {
-      if (mode === 'AUTO') { setMode('YOU'); flap(); }
+      if (mode === 'AUTO') { setMode('YOU'); flap(); track('game_played', {}); }
       else if (mode === 'YOU') { flap(); }
       else if (mode === 'OVER') { reset('YOU'); flap(); }
     }
@@ -394,6 +402,7 @@
   function openTerm() {
     terminal.classList.add('open');
     termInput.focus();
+    track('console_open', {});
     if (!termOut.childElementCount) {
       print('out', "Your satchel is full. Cast <b>inventory</b> to see what you carry, or <b>revelio</b> for the book of spells.");
     }
@@ -614,6 +623,7 @@
     var verb = parts[0].toLowerCase();
     var arg = parts.slice(1).join(' ');
     verb = VERB_ALIASES[verb] || verb;
+    track('spell_cast', { spell: verb });
     if (SPELLS[verb]) { SPELLS[verb](arg.toLowerCase()); return; }
     var asItem = findItem(parts[0]);   // bare item name → examine it
     if (asItem) { examineItem(parts[0]); return; }
@@ -677,6 +687,11 @@
     termInput.value = '';
     runLine(b.getAttribute('data-spell'));
     termInput.focus();
+  });
+
+  /* ---- CTA click analytics ---- */
+  document.querySelectorAll('.cta-row .btn').forEach(function (b) {
+    b.addEventListener('click', function () { track('cta_click', { label: b.textContent.replace(/\s+/g, ' ').trim() }); });
   });
 
   /* ---- mobile nav drawer ---- */
