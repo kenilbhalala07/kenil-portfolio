@@ -119,9 +119,7 @@
                if (window.WizFX) window.WizFX.nameShimmer(); }
       }, 70);
     }
-    ignite();
-    nameEl.addEventListener('mouseenter', ignite);
-    setInterval(ignite, 26000);
+    // static name — no ignite/shimmer; subtle glow-on-hover is handled in CSS
   }
 
   /* ---------------- ticker (duplicate for seamless loop) ---------------- */
