@@ -123,9 +123,37 @@
     setTimeout(function () { stage.classList.remove('lure'); }, 1400);
   }
 
+  /* ---------------- candle chime (original magical sparkle, on click) ---------------- */
+  function wireCandleChime() {
+    var candle = document.querySelector('.candle');
+    if (!candle) return;
+    candle.style.cursor = 'pointer';
+    candle.setAttribute('title', 'tap for a spark');
+    var actx;
+    candle.addEventListener('click', function () {
+      if (calm()) return;
+      try {
+        actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+        if (actx.state === 'suspended') actx.resume();
+        var t0 = actx.currentTime;
+        // an original ascending shimmer — not any known melody
+        [880, 1174.66, 1567.98, 2093].forEach(function (f, i) {
+          var t = t0 + i * 0.085;
+          var osc = actx.createOscillator(), g = actx.createGain();
+          osc.type = 'triangle'; osc.frequency.value = f;
+          g.gain.setValueAtTime(0.0001, t);
+          g.gain.exponentialRampToValueAtTime(0.15, t + 0.02);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + 0.5);
+          osc.connect(g); g.connect(actx.destination);
+          osc.start(t); osc.stop(t + 0.55);
+        });
+      } catch (e) {}
+    });
+  }
+
   /* ---------------- boot + public API ---------------- */
   function init() {
-    starfield(); scrollReveal(); wireWaxSeal(); cursorTrail();
+    starfield(); scrollReveal(); wireWaxSeal(); cursorTrail(); wireCandleChime();
     var owlBtn = document.querySelector('a.btn[href="#owlpost"]');
     if (owlBtn) owlBtn.addEventListener('click', flyOwl);
   }
