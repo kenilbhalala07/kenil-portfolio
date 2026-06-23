@@ -128,27 +128,33 @@
     var candle = document.querySelector('.candle');
     if (!candle) return;
     candle.style.cursor = 'pointer';
-    candle.setAttribute('title', 'tap for a spark');
+    candle.setAttribute('title', 'tap me ✦');
     var actx;
-    candle.addEventListener('click', function () {
-      if (calm()) return;
+    function spark() {
       try {
         actx = actx || new (window.AudioContext || window.webkitAudioContext)();
         if (actx.state === 'suspended') actx.resume();
         var t0 = actx.currentTime;
-        // an original ascending shimmer — not any known melody
-        [880, 1174.66, 1567.98, 2093].forEach(function (f, i) {
-          var t = t0 + i * 0.085;
+        var master = actx.createGain();
+        master.gain.value = 0.42;
+        master.connect(actx.destination);
+        // original ascending sparkle run — a generic shimmer, not any known melody
+        [659.25, 880, 987.77, 1318.51, 1567.98, 2093.0].forEach(function (f, i) {
+          var t = t0 + i * 0.075;
           var osc = actx.createOscillator(), g = actx.createGain();
           osc.type = 'triangle'; osc.frequency.value = f;
+          var harm = actx.createOscillator(), hg = actx.createGain();
+          harm.type = 'sine'; harm.frequency.value = f * 2.01; hg.gain.value = 0.3;
           g.gain.setValueAtTime(0.0001, t);
-          g.gain.exponentialRampToValueAtTime(0.15, t + 0.02);
-          g.gain.exponentialRampToValueAtTime(0.0001, t + 0.5);
-          osc.connect(g); g.connect(actx.destination);
-          osc.start(t); osc.stop(t + 0.55);
+          g.gain.exponentialRampToValueAtTime(0.4, t + 0.015);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + 0.6);
+          osc.connect(g); harm.connect(hg); hg.connect(g); g.connect(master);
+          osc.start(t); osc.stop(t + 0.66);
+          harm.start(t); harm.stop(t + 0.66);
         });
       } catch (e) {}
-    });
+    }
+    candle.addEventListener('click', spark);
   }
 
   /* ---------------- boot + public API ---------------- */

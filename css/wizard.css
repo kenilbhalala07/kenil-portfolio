@@ -641,8 +641,8 @@ h1.big-name:hover { filter: drop-shadow(0 0 16px var(--glow)); }
 }
 
 /* hero candle */
-.candle { display: flex; justify-content: flex-end; padding: 0 8px 0 0; margin-top: -6px; }
-.candle-svg { width: 30px; height: 58px; overflow: visible; }
+.candle { display: flex; justify-content: flex-end; padding: 4px 6px 8px 0; margin-top: -6px; }
+.candle-svg { width: 34px; height: 66px; overflow: visible; }
 .cd-body { fill: var(--panel); stroke: var(--border-2); stroke-width: 1; }
 [data-wiz="day"] .cd-body { fill: var(--bg-2); }
 .cd-rim  { fill: var(--gold-soft); opacity: .55; }
