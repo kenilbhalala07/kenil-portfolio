@@ -157,9 +157,34 @@
     candle.addEventListener('click', spark);
   }
 
+  /* ---------------- interactive: cursor-reactive tilt + magnetic buttons ---------------- */
+  function interactive3D() {
+    if (!FINE) return; // pointer-fine (desktop) only
+    document.querySelectorAll('.case-card, .lab-card, .stack-col, .photo-card, .channel, .stat-table, .cs-card').forEach(function (el) {
+      el.classList.add('tiltable');
+      el.addEventListener('pointermove', function (e) {
+        if (off()) { el.style.transform = ''; return; }
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = 'perspective(900px) rotateX(' + (-py * 6).toFixed(2) + 'deg) rotateY(' + (px * 6).toFixed(2) + 'deg) translateY(-4px)';
+      });
+      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    });
+    document.querySelectorAll('.btn, .nav-spell').forEach(function (el) {
+      el.classList.add('magnetic');
+      el.addEventListener('pointermove', function (e) {
+        if (off()) { el.style.transform = ''; return; }
+        var r = el.getBoundingClientRect();
+        el.style.transform = 'translate(' + ((e.clientX - (r.left + r.width / 2)) * 0.25).toFixed(1) + 'px,' + ((e.clientY - (r.top + r.height / 2)) * 0.4).toFixed(1) + 'px)';
+      });
+      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    });
+  }
+
   /* ---------------- boot + public API ---------------- */
   function init() {
-    starfield(); scrollReveal(); wireWaxSeal(); cursorTrail(); wireCandleChime();
+    starfield(); scrollReveal(); wireWaxSeal(); cursorTrail(); wireCandleChime(); interactive3D();
     var owlBtn = document.querySelector('a.btn[href="#owlpost"]');
     if (owlBtn) owlBtn.addEventListener('click', flyOwl);
   }

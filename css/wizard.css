@@ -1046,6 +1046,14 @@ h1.big-name:hover { filter: drop-shadow(0 0 16px var(--glow)); }
 @media (max-width: 700px) { .cs-cards { grid-template-columns: 1fr; } }
 
 /* ============================================================
+   INTERACTIVE — cursor-reactive tilt on cards + magnetic buttons
+   ============================================================ */
+.tiltable { transition: transform .18s ease, box-shadow .25s ease, border-color .25s ease; will-change: transform; }
+.tiltable:hover { box-shadow: 0 20px 46px -22px var(--glow), inset 0 0 30px -12px var(--shadow); }
+.magnetic { transition: transform .22s cubic-bezier(.2, .8, .2, 1); }
+[data-calm] .tiltable, [data-calm] .magnetic { transform: none !important; transition: none; }
+
+/* ============================================================
    reduced-motion master guard (MUST be last)
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
