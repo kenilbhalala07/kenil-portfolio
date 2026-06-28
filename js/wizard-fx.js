@@ -182,9 +182,50 @@
     });
   }
 
+  /* ---------------- smooth inertia scroll (Lenis, loaded on demand) ---------------- */
+  function smoothScroll() {
+    if (off()) return;                       // native scroll under reduced-motion / Calm
+    if (!window.matchMedia('(pointer: fine)').matches) return; // keep native touch scroll on mobile
+    var s = document.createElement('script');
+    s.src = 'https://unpkg.com/lenis@1/dist/lenis.min.js';
+    s.onload = function () {
+      if (!window.Lenis) return;
+      var lenis = new window.Lenis({ duration: 1.05, smoothWheel: true, wheelMultiplier: 0.9 });
+      function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var href = a.getAttribute('href');
+          if (!href || href.length < 2) return;
+          var el = document.getElementById(href.slice(1));
+          if (!el) return;
+          e.preventDefault();
+          lenis.scrollTo(el, { offset: -8 });
+        });
+      });
+    };
+    document.head.appendChild(s);
+  }
+
+  /* ---------------- scroll progress bar ---------------- */
+  function scrollProgress() {
+    var bar = document.createElement('div');
+    bar.className = 'scroll-prog'; bar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bar);
+    function upd() {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var p = h > 0 ? window.scrollY / h : 0;
+      bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, p)) + ')';
+    }
+    upd();
+    window.addEventListener('scroll', upd, { passive: true });
+    window.addEventListener('resize', upd);
+  }
+
   /* ---------------- boot + public API ---------------- */
   function init() {
     starfield(); scrollReveal(); wireWaxSeal(); cursorTrail(); wireCandleChime(); interactive3D();
+    smoothScroll(); scrollProgress();
     var owlBtn = document.querySelector('a.btn[href="#owlpost"]');
     if (owlBtn) owlBtn.addEventListener('click', flyOwl);
   }
